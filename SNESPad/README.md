@@ -1,13 +1,13 @@
 #SNES Controller Pins
 
-  1 2 3 4   5 6 7
-< o o o o | o o o >
+  	1 2 3 4   5 6 7
+	< o o o o | o o o >
 	
-1) +5V
-2) Clock
-3) Latch
-4) Data
-7) GND
+	1) +5V
+	2) Clock
+	3) Latch
+	4) Data
+	7) GND
 
 pin_config(latch, clock, data);
 
