@@ -33,21 +33,21 @@ SNESPad::SNESPad(unsigned int latch, unsigned int clock, unsigned int data) {
  *  @details 
  */
 unsigned int SNESPad::get_buttons() {
-  unsigned int button_state = 0;
+	unsigned int button_state = 0;
 
-  digitalWrite(PIN_LATCH, HIGH);
-  digitalWrite(PIN_LATCH, LOW);
+	digitalWrite(PIN_LATCH, HIGH);
+	digitalWrite(PIN_LATCH, LOW);
 
-  int i;
-  for(i = 0; i < 12; i++){
-    button_state |= digitalRead(PIN_DATA) << i;
+	int i;
+	for(i = 0; i < 12; i++){
+		button_state |= digitalRead(PIN_DATA) << i;
 
-    digitalWrite(PIN_CLOCK, HIGH);
-    digitalWrite(PIN_CLOCK, LOW);
+		digitalWrite(PIN_CLOCK, HIGH);
+		digitalWrite(PIN_CLOCK, LOW);
   }
 
-  button_state = ~button_state;
-  button_state &= 0x0fff;
+	button_state = ~button_state;
+	button_state &= 0x0fff;
 
-  return button_state;
+	return button_state;
 }
